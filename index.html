@@ -180,6 +180,7 @@
           <p>Developed an end-to-end multilingual TTS system achieving high-quality output (4.0–4.4 UTMOS) and < 0.5s inference latency.
             Engineered robust pipelines for dataset unification, podcast processing, and complex text normalization (currencies, dates), while resolving critical audio distortion issues through training optimization.</p>
           <div class="stack">Kokoro TTS / Montreal Forced Aligner (MFA) / eSpeak NG / PyTorch</div>
+          <button type="button" class="btn demo-btn" data-video-id="b0d03BW2Ioc" aria-haspopup="dialog">Watch Demo</button>
         </article>
 
         <article class="project-card reveal">
@@ -378,6 +379,110 @@
     <span>&copy; 2026 Sourav Saha.</span>
     <a href="#home">Back to top</a>
   </footer>
+
+  <div class="video-modal" id="videoModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Project demo video">
+    <div class="video-modal-backdrop" data-close-modal></div>
+    <div class="video-modal-content">
+      <button type="button" class="video-modal-close" data-close-modal aria-label="Close demo video">&times;</button>
+      <div class="video-modal-frame">
+        <iframe id="videoModalIframe" src="" title="Project demo video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .demo-btn {
+      margin-top: 1rem;
+      cursor: pointer;
+      border: 1px solid currentColor;
+      background: transparent;
+      font: inherit;
+    }
+    .video-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+    .video-modal.is-open {
+      display: flex;
+    }
+    .video-modal-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.8);
+    }
+    .video-modal-content {
+      position: relative;
+      width: min(900px, 92vw);
+      z-index: 1;
+    }
+    .video-modal-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #000;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .video-modal-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .video-modal-close {
+      position: absolute;
+      top: -2.5rem;
+      right: 0;
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-size: 2rem;
+      line-height: 1;
+      cursor: pointer;
+    }
+  </style>
+
+  <script>
+    (function () {
+      var modal = document.getElementById('videoModal');
+      var iframe = document.getElementById('videoModalIframe');
+
+      function openModal(videoId) {
+        iframe.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0';
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal() {
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+        iframe.src = '';
+        document.body.style.overflow = '';
+      }
+
+      document.querySelectorAll('.demo-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          openModal(btn.getAttribute('data-video-id'));
+        });
+      });
+
+      modal.querySelectorAll('[data-close-modal]').forEach(function (el) {
+        el.addEventListener('click', closeModal);
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+          closeModal();
+        }
+      });
+    })();
+  </script>
 
   <script src="script.js"></script>
 </body>

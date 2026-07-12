@@ -33,13 +33,10 @@
     <section class="hero section-band" id="home">
       <div class="hero-copy reveal">
         <p class="eyebrow">Senior Machine Learning Engineer</p>
-        <h2>Designing AI that understands, sees, speaks, and acts.</h2>
+        <h2>Turning Text into Human-Sounding Speech.</h2>
 
         <p class="hero-text">
-          I am Sourav Saha, an AI Engineer focused on transforming research-grade models into fast,
-          reliable, and human-centered products that solve real business problems. My experience spans
-          LLMs, computer vision, speech AI, and intelligent automation, with a strong emphasis on
-          building production-ready systems. Open to relocation and global opportunities.
+          I'm Sourav Saha, an AI Engineer who builds machines that sound human. I specialize in Text-to-Speech and speech AI, turning research-grade voice models into fast, natural, production-ready systems — alongside deep experience across LLMs, computer vision, and intelligent automation. I don't just prototype AI; I ship it. Open to relocation and global opportunities.
         </p>
         <div class="hero-actions">
           <a class="btn primary" href="#projects">View Work</a>
@@ -52,14 +49,14 @@
           <img src="Gemini_Generated_Image_boazccboazccboaz%20(1).png" alt="Portrait of Sourav Saha">
         </div>
         <div class="status-panel" aria-label="Career snapshot">
-          <span>Available for AI, ML, and LLM engineering roles</span>
-          <strong>4+ years</strong>
+          <span>Available for Voice AI, LLM & ML Engineering Roles</span>
+          <strong>5+ years</strong>
         </div>
       </div>
 
       <div class="metrics reveal" aria-label="Portfolio highlights">
         <article>
-          <strong>3+</strong>
+          <strong>5+</strong>
           <span>Live Projects</span>
         </article>
         <article>
@@ -177,10 +174,12 @@
         <article class="project-card reveal">
           <span class="tag">Voice Processing</span>
           <h3>Text-to-Speech</h3>
-          <p>Developed an end-to-end multilingual TTS system achieving high-quality output (4.0–4.4 UTMOS) and < 0.5s inference latency.
-            Engineered robust pipelines for dataset unification, podcast processing, and complex text normalization (currencies, dates), while resolving critical audio distortion issues through training optimization.</p>
-          <div class="stack">Kokoro TTS / Montreal Forced Aligner (MFA) / eSpeak NG / PyTorch</div>
-          <button type="button" class="btn demo-btn" data-video-id="b0d03BW2Ioc" aria-haspopup="dialog">Watch Demo</button>
+          <p>Built a multilingual TTS system on Qwen3, supporting natural, high-fidelity speech synthesis in English and German (4.0–4.4 UTMOS) with sub-0.5s inference latency. Engineered robust pipelines for dataset unification, podcast-scale audio processing, and complex text normalization (currencies, dates), while resolving critical audio distortion issues through targeted training optimization.</p>
+          <div class="stack">Qwen3 TTS / Montreal Forced Aligner (MFA) / eSpeak NG / PyTorch</div>
+          <div class="demo-btn-group">
+            <!-- <button type="button" class="btn demo-btn" data-video-id="b0d03BW2Ioc" aria-haspopup="dialog">Watch Demo</button> -->
+            <button type="button" class="btn demo-btn" data-video-id="cNS1f5kwP5I" aria-haspopup="dialog">Watch Demo</button>
+          </div>
         </article>
 
         <article class="project-card reveal">
@@ -391,8 +390,14 @@
   </div>
 
   <style>
-    .demo-btn {
+    .demo-btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
       margin-top: 1rem;
+    }
+    .demo-btn {
+      margin-top: 0;
       cursor: pointer;
       border: 1px solid currentColor;
       background: transparent;
